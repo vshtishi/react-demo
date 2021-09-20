@@ -3,6 +3,10 @@ import ReactDom from "react-dom";
 
 //CSS
 import "./index.css";
+//setup vars
+const author = "Osamu Dazai";
+const title = "No Longer Human";
+const img = "https://images-na.ssl-images-amazon.com/images/I/51Sjypj1F7L._AC_UL200_SR200,200_.jpg"
 
 function BookList() {
   return (
@@ -19,26 +23,12 @@ function BookList() {
 
 const Book = () => {
   return (
-    <article className='book'>
-      <Image />
-      <Title />
-      <Author />
+    <article className="book">
+      <img src={img} />
+      <h1>{title}</h1>
+      <h4>{author}</h4>
     </article>
   );
-};
-
-const Image = () => {
-  return (
-    <img src="https://images-na.ssl-images-amazon.com/images/I/51Sjypj1F7L._AC_UL200_SR200,200_.jpg" />
-  );
-};
-
-const Title = () => {
-  return <h1>No Longer Human</h1>;
-};
-
-const Author = () => {
-  return <h4>Osamu Dazai</h4>;
 };
 
 ReactDom.render(<BookList />, document.getElementById("root"));
